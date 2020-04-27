@@ -15,6 +15,7 @@ resource "aws_instance" "bastion" {
   key_name                    = var.bastion_key_pair
 
   tags = {
+    Name = var.namespace
   }
 }
 
@@ -48,6 +49,7 @@ resource "aws_vpc" "hashicorp" {
   enable_dns_hostnames = "true"
 
   tags = {
+    Name = "${var.namespace} VPC"
   }
 }
 
@@ -58,6 +60,7 @@ resource "aws_subnet" "dmz_subnet" {
   availability_zone       = data.aws_availability_zones.available.names[0]
 
   tags = {
+    Name = "DMZ Subnet"
   }
 }
 
@@ -76,6 +79,7 @@ resource "aws_route_table" "rtb" {
   }
 
   tags = {
+    Name = "${var.namespace}-IGW"
   }
 }
 

@@ -50,6 +50,7 @@ resource "aws_vpc" "hashicorp" {
 
   tags = {
     Name = "${var.namespace} VPC"
+    department = "IT"
   }
 }
 

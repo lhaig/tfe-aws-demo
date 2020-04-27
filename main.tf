@@ -16,6 +16,8 @@ resource "aws_instance" "bastion" {
 
   tags = {
     Name = var.namespace
+    department = "IT"
+    owner = "Ops"
   }
 }
 

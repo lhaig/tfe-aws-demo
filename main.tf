@@ -15,7 +15,7 @@ resource "aws_instance" "bastion" {
   key_name                    = var.bastion_key_pair
 
   tags = {
-    Name = var.namespace
+
   }
 }
 
